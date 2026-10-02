@@ -1,0 +1,120 @@
+/**
+ * Guardian Social - Responsive & Mobile CSS
+ * Adaptações para smartphones e tablets (320px+), alvos de toque e acessibilidade
+ */
+
+/* ==========================================================================
+   Tablets e Telas Médias (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .app-container {
+    padding: var(--space-3);
+  }
+
+  .app-header {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .brand-title {
+    font-size: var(--font-size-md);
+  }
+
+  .scenario-body-wrapper {
+    padding: var(--space-4);
+  }
+
+  .choices-group {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .report-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .btn-choice {
+    min-height: 56px;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .btn-confirm,
+  .btn-next-step,
+  .btn-restart {
+    min-height: 48px;
+  }
+}
+
+/* ==========================================================================
+   Smartphones e Telas Estreitas (<= 480px e até 320px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9375rem; /* 15px para melhor leitura em telas pequenas */
+  }
+
+  .app-header-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .brand-subtitle {
+    display: none; /* Reduz ruído em telas muito estreitas */
+  }
+
+  .email-subject {
+    font-size: var(--font-size-md);
+  }
+
+  .email-sender-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-inspect-sender {
+    width: 100%;
+    text-align: center;
+    margin-top: var(--space-2);
+  }
+
+  .browser-address-field {
+    font-size: 11px;
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .sms-container {
+    border-radius: var(--radius-lg);
+  }
+
+  .sms-bubble {
+    max-width: 95%;
+  }
+
+  .score-display-box {
+    width: 130px;
+    height: 130px;
+  }
+
+  .score-number {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* Tooltip em dispositivos móveis: vira um bottom sheet/popover fixo para toque fácil */
+  .inspection-tooltip {
+    position: fixed;
+    bottom: var(--space-4) !important;
+    left: var(--space-3) !important;
+    right: var(--space-3) !important;
+    top: auto !important;
+    max-width: none;
+    width: calc(100% - var(--space-6));
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
+    border: 1px solid #475569;
+  }
+}
+
+/* Prevenção de overflow horizontal */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}

@@ -1,0 +1,14 @@
+# Universal
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# JavaScript / Node (if any local tools used)
+node_modules/
+dist/
+build/
+*.log
+.env*

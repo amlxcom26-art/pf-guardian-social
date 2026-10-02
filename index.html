@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guardian Social - Simulador Interativo Educacional de Engenharia Social para o Ensino Médio">
+  <title>Guardian Social | Simulador Educacional de Cibersegurança</title>
+
+  <!-- Estilos Estáticos Modulares -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Cabeçalho Institucional -->
+  <header class="app-header" role="banner">
+    <div class="app-header-content">
+      <div class="brand">
+        <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <div>
+          <span class="brand-title">Guardian Social</span>
+          <span class="brand-subtitle">Simulador de Engenharia Social para o Ensino Médio</span>
+        </div>
+      </div>
+      <button type="button" class="btn btn-ghost btn-sm" id="header-restart-btn" data-action="restart-session" title="Reiniciar a simulação atual" aria-label="Reiniciar a simulação">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="1 4 1 10 7 10"/>
+          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+        </svg>
+        <span>Reiniciar</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="app-container" id="app" role="main">
+
+    <!-- Indicador de Progresso da Rodada -->
+    <div id="progress-wrapper" class="progress-section" aria-label="Progresso da Simulação">
+      <div class="progress-header">
+        <span class="progress-label" id="progress-text">Carregando cenários...</span>
+        <span class="progress-score" id="live-score">Pontos: 0</span>
+      </div>
+      <div class="progress-track" role="progressbar" id="progress-bar" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" aria-label="Progresso de cenários">
+        <div class="progress-fill" id="progress-bar-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Container do Cenário Ativo (E-mail, SMS ou Login) -->
+    <section id="scenario-container" class="scenario-section animate-fade-in" aria-live="polite">
+      <div class="loading-state">
+        <p>Carregando simulador de cibersegurança...</p>
+      </div>
+    </section>
+
+    <!-- Painel de Feedback Pedagógico (Exibido pós-confirmação) -->
+    <section id="feedback-container" class="feedback-section" aria-live="assertive" hidden>
+      <!-- Injetado dinamicamente via UI.showFeedback -->
+    </section>
+
+    <!-- Tela de Resultados Finais (Exibida pós-último cenário) -->
+    <section id="results-container" class="results-section" aria-live="polite" hidden>
+      <!-- Injetado dinamicamente via UI.renderResults -->
+    </section>
+
+    <!-- Tooltip Flutuante / Popover de Inspeção Segura -->
+    <div id="inspection-tooltip" class="inspection-tooltip" role="tooltip" hidden>
+      <div class="tooltip-header">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <span>Inspeção Segura de Link</span>
+      </div>
+      <div class="tooltip-content" id="inspection-tooltip-content"></div>
+      <div class="tooltip-footer">
+        <small>⚠️ Simulação inerte. Nenhuma conexão externa é realizada.</small>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="app-footer" role="contentinfo">
+    <p><strong>Guardian Social</strong> — Aplicação Educacional Sandbox de Cibersegurança.</p>
+    <p>Ambiente seguro e 100% estático. Nenhuma credencial real ou dado pessoal é coletado. Compatível com GitHub Pages.</p>
+  </footer>
+
+  <!-- Scripts: Fallback em memória seguido pelos Módulos Vanilla ES6 -->
+  <script src="data/scenarios-fallback.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
