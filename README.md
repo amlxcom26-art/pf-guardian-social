@@ -134,19 +134,30 @@ Para testar a requisição assíncrona ao `scenarios.json` através de um servid
 
 ## 🌐 Publicação no GitHub Pages
 
-O projeto foi projetado com **100% de caminhos relativos**, permitindo publicação direta no GitHub Pages sem etapas de build:
+O projeto foi preparado e estruturado para publicação imediata no **GitHub Pages** (com arquivo `.nojekyll`, caminhos 100% relativos e workflow automatizado do GitHub Actions):
 
-1. Faça o envio (*push*) do repositório para o GitHub:
+### Opção A: Deploy Automático via GitHub Actions (Recomendado)
+O repositório já inclui o arquivo [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml).
+1. Envie suas alterações para o GitHub:
    ```bash
    git push origin main
    ```
-2. Acesse seu repositório no GitHub e clique na aba **Settings**.
-3. No menu lateral esquerdo, selecione **Pages**.
-4. Em **Build and deployment**:
-   - **Source**: selecione `Deploy from a branch`.
-   - **Branch**: selecione `main` e a pasta `/ (root)`.
-   - Clique em **Save**.
-5. Aguarde cerca de 1 a 2 minutos e a URL pública da aplicação estará disponível!
+2. No GitHub, vá em **Settings** > **Pages**.
+3. Em **Build and deployment** > **Source**, selecione **GitHub Actions**.
+4. O workflow será acionado automaticamente a cada `git push` na branch `main`.
+
+### Opção B: Deploy Clássico via Branch
+1. Envie suas alterações para o GitHub:
+   ```bash
+   git push origin main
+   ```
+2. No GitHub, vá em **Settings** > **Pages**.
+3. Em **Build and deployment** > **Source**, selecione **Deploy from a branch**.
+4. Em **Branch**, selecione `main` e a pasta `/ (root)`.
+5. Clique em **Save**.
+
+Após a publicação, o simulador estará disponível em:  
+🔗 **https://amlxcom26-art.github.io/pf-guardian-social/**
 
 ---
 
